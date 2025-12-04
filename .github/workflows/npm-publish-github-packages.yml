@@ -25,5 +25,11 @@ jobs:
 
       - name: Build React App
         run: npm run build
+        
+      - name: Gitleaks Installation
+        run: sudo apt install gitleaks -y
+
+      - name: GitLeaks Code Scan
+        run: gitleaks detect source . -r gitleaks.report.json -f json
 
      
